@@ -1,0 +1,28 @@
+<?php
+/** @var \Citytech\ProductSlider\Block\ProductSlider $block */
+$products = $block->getProducts();
+if (empty($products)) {
+    return;
+}
+?>
+<div class="cps-slider" data-mage-init='{"Citytech_ProductSlider/js/product-slider": {"autoplay": 4000}}'>
+    <h2 class="cps-title"><?= $block->escapeHtml($block->getSliderTitle()) ?></h2>
+    <div class="cps-wrap">
+        <button type="button" class="cps-btn cps-prev" aria-label="<?= $block->escapeHtmlAttr(__('Previous')) ?>">&#8249;</button>
+        <ul class="cps-track">
+            <?php foreach ($products as $product): ?>
+                <li class="cps-item">
+                    <a class="cps-link" href="<?= $block->escapeUrl($product->getProductUrl()) ?>">
+                        <img class="cps-img"
+                             src="<?= $block->escapeUrl($block->getImageUrl($product)) ?>"
+                             alt="<?= $block->escapeHtmlAttr($product->getName()) ?>"
+                             loading="lazy"/>
+                        <span class="cps-name"><?= $block->escapeHtml($product->getName()) ?></span>
+                        <span class="cps-price"><?= $block->escapeHtml($block->getFormattedPrice($product)) ?></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <button type="button" class="cps-btn cps-next" aria-label="<?= $block->escapeHtmlAttr(__('Next')) ?>">&#8250;</button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Citytech_ProductSlider::css/product-slider.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Citytech\ProductSlider\Block\CustomData" name="custom.table.display"
+                   template="Citytech_ProductSlider::display_data.phtml"/>
+            <block class="Citytech\ProductSlider\Block\ProductSlider" name="citytech.product.slider"
+                   template="Citytech_ProductSlider::product_slider.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

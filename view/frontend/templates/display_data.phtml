@@ -1,0 +1,21 @@
+<?php
+/** @var \Citytech\ProductSlider\Block\CustomData $block */
+$customData = $block->getCustomTableData();
+?>
+
+<div class="custom-notice-container">
+    <?php if (!empty($customData)): ?>
+        <?php foreach ($customData as $row): ?>
+            <?php
+                $title = $row['title'] ?? $row['notice_title'] ?? 'Notice';
+                $content = $row['content'] ?? $row['notice_content'] ?? '';
+            ?>
+            <div class="notice-box" style="margin-bottom: 15px;">
+                <h3 class="title"><?= $block->escapeHtml((string)$title) ?></h3>
+                <div class="content"><?= $block->escapeHtml((string)$content) ?></div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <div class="message info empty"><span>No notice found.</span></div>
+    <?php endif; ?>
+</div>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <productslider_config>
+            <slider>
+                <enable>1</enable>
+                <title>Featured Products</title>
+                <product_count>10</product_count>
+            </slider>
+        </productslider_config>
+    </default>
+</config>

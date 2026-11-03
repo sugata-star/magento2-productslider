@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/db_schema.xsd">
+    <table name="custom_notice" resource="default" engine="innodb" comment="Row Data Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Grid Record Id"/>
+        <column xsi:type="varchar" name="title" length="255" nullable="false" comment="Title"/>
+        <column xsi:type="text" name="content" nullable="false" comment="Post"/>
+        <column xsi:type="timestamp" name="publish_date" nullable="true" comment="Publish Date"/>
+        <column xsi:type="smallint" name="is_active" nullable="true" comment="Active Status"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" nullable="true" on_update="true" comment="Modification Time"/>
+        <constraint xsi:type="primary" referenceId="CUSTOM_NOTICE_PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
+
+
+
+
+
+
+
+

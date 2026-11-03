@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Citytech_ProductSlider::citytech"
+             title="Citytech"
+             module="Citytech_ProductSlider"
+             sortOrder="50"
+             resource="Citytech_ProductSlider::citytech"/>
+
+        <add id="Citytech_ProductSlider::notice"
+             title="Special Notices"
+             module="Citytech_ProductSlider"
+             sortOrder="10"
+             parent="Citytech_ProductSlider::citytech"
+             resource="Citytech_ProductSlider::notice"/>
+
+        <add id="Citytech_ProductSlider::notice_list"
+             title="List"
+             module="Citytech_ProductSlider"
+             sortOrder="10"
+             parent="Citytech_ProductSlider::notice"
+             action="productslider/notice/index"
+             resource="Citytech_ProductSlider::notice_list"/>
+
+        <add id="Citytech_ProductSlider::config_settings"
+             title="Settings"
+             module="Citytech_ProductSlider"
+             sortOrder="20"
+             parent="Citytech_ProductSlider::notice"
+             action="adminhtml/system_config/edit/section/productslider_config"
+             resource="Citytech_ProductSlider::citytech_config"/>
+    </menu>
+</config>
